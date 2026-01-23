@@ -1,4 +1,4 @@
- Make a Thing
+# Make a Thing
 
 **Author:** Alexandre Casanova-Frascarella  
 **Student ID:** 40207805
