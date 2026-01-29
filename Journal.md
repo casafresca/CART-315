@@ -24,3 +24,28 @@ I then implemented familiar platformer mechanics, such as jumping on enemies and
 The inclusion of enemies also contributes to the game’s darker atmosphere and world-building. I believe this allows players to create their own head-canon about what may have happened in the forest based on its tone and visual design.
 
 Finally, after discovering a visually striking sword sprite, I decided to make collecting the sword the primary goal of the game. The narrative idea is that the fox must travel through the forest to retrieve the sword and defeat the remaining monsters. Although the game currently ends once the fox collects the sword, this concept could be expanded further in a future, more complete build.
+
+
+# Exploration Prototype 2
+
+For my second exploration prototype, I followed a beginner Unity tutorial from the YouTube channel _Game Maker’s Toolkit_. The tutorial emphasized that while Unity is a beginner-friendly engine, it is most effective when its core concepts are understood first.
+
+It introduced the Unity Editor layout, highlighting the importance of navigating the **Scene**, **Game**, **Hierarchy**, and **Inspector** panels. The video demonstrated how **GameObjects** and **Components** form the foundation of all elements within Unity, and how **Transforms**, **Colliders**, and **Scripts** work together to define object behaviour and interaction.
+
+The tutorial guided viewers through creating a simple Flappy Bird–style game, reinforcing the idea that starting with small projects is an effective way to learn Unity. Through this process, I learned how to:
+
+- Link C# scripts to game object attributes
+- Trigger events
+- Spawn and despawn objects
+- Implement a basic game-over screen
+- Gain confidence in using C# without needing to master the language immediately
+
+## Screenshots
+
+![Screenshot 1](image_pHDMn7XRnyFOiaL++uVlWQ==.png)
+![Screenshot 2](image_WcTnUC24VVeidv3ZMAHppA==.png)
+
+## Reference
+
+Game Maker’s Toolkit. _The Unity Tutorial For Complete Beginners._ YouTube video, 46:39, December 2, 2022. [https://www.youtube.com/watch?v=XtQMytORBmM](https://www.youtube.com/watch?v=XtQMytORBmM&utm_source=chatgpt.com)
+
