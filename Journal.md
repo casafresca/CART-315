@@ -43,7 +43,8 @@ The tutorial guided viewers through creating a simple Flappy Bird–style game, 
 ## Screenshots
 
 ![Pink Bird](Screenshot 2026-01-29 145547.png)
-![Game Over](Screenshot 2026-01-29 150023.jpg)
+
+![Game Over](Screenshot 2026-01-29 150023.png)
 
 ## Reference
 
