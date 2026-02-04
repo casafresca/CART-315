@@ -70,6 +70,7 @@ For the second prototype exploration, I investigated **role prototyping**, with 
 The *Invisible Ball* power-up makes the ball invisible to both players for a limited time. During this effect, players must rely on **memory** and **trajectory prediction** to intercept the ball. This mechanic introduces uncertainty and heightened tension into gameplay.
 
 > **Design note:** The initially proposed duration of 30 seconds may be excessive given Pong’s fast-paced nature and may require adjustment.
+> ![Invisible Ball](Invisible_ball.jpg)
 
 ### Scatter Shot
 *Scatter Shot* multiplies the ball into **three simultaneous, fully active balls**.
@@ -79,6 +80,7 @@ The *Invisible Ball* power-up makes the ball invisible to both players for a lim
 - If multiple balls enter a goal, **each successfully scores a point**.
 
 This power-up dramatically increases both the **intensity** and **complexity** of gameplay. The effect ends once **all three balls have been scored** in either goal.
+![Scatter Shot](Scatter_Shot.jpg)
 
 ### Rotating Paddle
 The *Rotating Paddle* power-up allows the player to rotate their paddle up to **180 degrees**. This enables more precise shot angles and introduces the possibility of adding velocity through rotational movement.
@@ -87,9 +89,11 @@ The *Rotating Paddle* power-up allows the player to rotate their paddle up to **
 - Players using **arrow keys** rotate using **left/right arrows**.
 
 While this mechanic adds significant mechanical depth, it also increases **cognitive and motor demands**, making control more complex.
+![Rotating Paddle](Paddle_rotate.jpg)
 
 ### Vanishing Paddle
 The *Vanishing Paddle* power-up temporarily removes the **opponent’s paddle** from the field for **five seconds**, giving the activating player an unobstructed opportunity to score.
+![Vanishing Paddle](Vanishing_Paddle.jpg)
 
 ### Minus-One Ball
 The *Minus-One Ball* reverses the game’s scoring logic.
@@ -100,4 +104,4 @@ The *Minus-One Ball* reverses the game’s scoring logic.
 - Scoring against the opponent subtracts a point from the player.
 
 This power-up was intentionally designed as an **adverse effect** to prevent balance issues. Allowing players to reduce an opponent’s score without risk would be overly powerful and potentially unfair.
-
+![Minus-One Ball](MInusOne_ball.jpg)
