@@ -63,6 +63,7 @@ For the second prototype exploration, I investigated **role prototyping**, with 
 - When the game state resets and the ball respawns at the center, **all active effects are removed**.
 - Only **one power-up** may exist on the field at a time.
 - Each power-up remains available for **10 seconds** before a new one spawns.
+- For the power-ups to be most effective, the scoring zone of each player has to be minimized. 
 
 ## Power-Up Designs
 
