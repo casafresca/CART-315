@@ -162,6 +162,8 @@ Color emerged as a central component of the visual language:
 ### • Iterative Refinement
 Illustrator allowed experiments with transparency, borders, and glow. Subtle luminous frames reinforced the arcade look and polish of power‑ups.
 
+![Power-ups_graphics](Power-ups_graphics.png) 
+
 ---
 
 ## Reflection
