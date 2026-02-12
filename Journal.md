@@ -133,6 +133,15 @@ The **Vanishing Paddle**, the most powerful offensive tool, removes the opponent
 ### • Strategic Self‑Scoring
 The **Minus‑One Ball** added a twist by allowing players to avoid scoring or to target their own goal. This sabotage mechanic brought strategic misdirection while keeping the core gameplay intact.
 
+# Game Power‑Up Balance Sheet Design
+
+| Power‑Up         | Type       | Spawn Weight | Duration      | Impact on Role                                                   |
+|------------------|------------|--------------|----------------|------------------------------------------------------------------|
+| Rotating Paddle  | Utility    | 35%          | Until Score    | Increases motor demand; allows for offensive “smashes.”          |
+| Scatter Shot     | Defensive  | 20%          | Until Cleared  | High intensity; forces area defense over precision.              |
+| Minus‑One Ball   | Sabotage   | 20%          | Until Score    | Reverses goal logic; introduces strategic self‑scoring.          |
+| Invisible Ball   | Mental     | 15%          | 8–10 Sec*      | Tests memory/prediction; creates high tension.                   |
+| Vanishing Paddle | Offensive  | 10%          | 5 Seconds      | Most powerful; removes opponent’s ability to defend.             |
 ---
 
 ## Phase 2: Look/Feel Prototyping in Adobe Illustrator
