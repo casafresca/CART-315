@@ -106,3 +106,55 @@ The *Minus-One Ball* reverses the game’s scoring logic.
 
 This power-up was intentionally designed as an **adverse effect** to prevent balance issues. Allowing players to reduce an opponent’s score without risk would be overly powerful and potentially unfair.
 ![Minus-One Ball](MInusOne_ball.jpg)
+
+# Exploration Prototype 3
+
+This week’s prototype advanced my study of mechanical balance and visual communication. After sketching power‑up concepts for our Pong project, I created a balance sheet and analyzed each mechanic’s function and its impact on the player experience. This journal documents the refinement of high‑stakes power‑ups and the development of a clear visual identity.
+
+---
+
+## Phase 1: Role Prototyping & The “Duration Problem”
+
+To evaluate how each power‑up changed the player's responsibilities in the game, I used role prototyping, a method for testing how different roles influence the player's interaction. Instead of only changing numbers like speed or duration, I assessed how each power‑up affected:
+
+- **Cognitive load** — difficulty of processing information  
+- **Motor skills** — precision and speed required for hand movements  
+- **Strategic decision‑making** — choices players make while forming a plan to win  
+
+### • Testing Cognitive Load
+The **Rotating Paddle** increased motor demands, making players more offensive and more focused on timing. I set its spawn weight to **35%**, giving players enough chances to master it without letting it dominate.
+
+### • Solving the Invisible Ball
+Though **30 seconds** seemed reasonable, testing showed it disrupted skill growth. Role prototyping revealed that it became unpredictable and unenjoyable. Shortening the duration to **8–10 seconds** kept tension and spatial awareness.
+
+### • Balancing the “Nuke”
+The **Vanishing Paddle**, the most powerful offensive tool, removes the opponent’s defence. To reduce frustration and ensure fairness, I limited it to **5 seconds** and set the spawn rate to **10%**.
+
+### • Strategic Self‑Scoring
+The **Minus‑One Ball** added a twist by allowing players to avoid scoring or to target their own goal. This sabotage mechanic brought strategic misdirection while keeping the core gameplay intact.
+
+---
+
+## Phase 2: Look/Feel Prototyping in Adobe Illustrator
+
+After ensuring the mechanics were balanced, I shifted focus to visual design. I wanted to communicate each power‑up’s purpose through shape, color, and silhouette so players could quickly recognize what each did. I used **Adobe Illustrator**, a vector‑graphics program, to create and refine these visual concepts.
+
+### • Iconic Silhouettes
+I used clean, vector‑based shapes—digital designs made from points and paths rather than pixels—for readability at small sizes common in fast‑moving on‑screen displays. My goal was to create icons that players could recognize instantly.
+
+### • Colour as Communication
+Color emerged as a central component of the visual language:
+
+- **Green — Rotating Paddle** → utility and skill‑based enhancement  
+- **Red — Scatter Shot** → urgency and defensive threat  
+- **Purple — Invisible Ball** → mystery and mental challenge  
+- **Yellow — Minus‑One Ball & Vanishing Paddle** → high‑impact, game‑altering effects  
+
+### • Iterative Refinement
+Illustrator allowed experiments with transparency, borders, and glow. Subtle luminous frames reinforced the arcade look and polish of power‑ups.
+
+---
+
+## Reflection
+
+This cycle highlighted how mechanical balance and visual clarity together ensure power‑ups feel fair and intuitive. Integrating these elements creates an engaging and readable system.
