@@ -201,8 +201,7 @@ On the technical side, I focused on making the project more modular and scalable
 - [x] Integrate `SceneManager`
 - [x] Refactor movement with `Input Manager`
 - [ ] Power-up System (Deferred to next sprint)
-
-![pong game](pong game.png)
+![pong game](pong_game.png)
 
 ## Reflections & Iteration
 I didn't quite get to the power-up implementation I had planned for this week, as I prioritized ensuring the **core gameplay loop** was rock-solid. However, I’m treating this as a necessary foundation. By deferring the "extra" features, I was able to focus on the interplay between functional simplicity and visual design. 
