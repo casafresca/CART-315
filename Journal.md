@@ -169,3 +169,40 @@ Illustrator allowed experiments with transparency, borders, and glow. Subtle lum
 ## Reflection
 
 This cycle highlighted how mechanical balance and visual clarity together ensure power‑ups feel fair and intuitive. Integrating these elements creates an engaging and readable system.
+
+
+# Exploration Prototype 3: Reimagining the Foundation
+ 
+**Focus:** *Mechanical Refactoring & Aesthetic Shifts*
+
+---
+
+##  Overview
+This week, I returned to the basics by rebuilding **Pong** from the ground up. While the mechanics are classical, my goal was to treat this as a deep dive into Unity’s internal systems and a study in **"mechanical pivoting."** I wanted to see how much I could push the game's identity by refining my previous prototype scripts and focusing heavily on the visual language.
+
+##  The Shift: From Walls to Nets
+One of the most significant changes I explored was a **spatial redesign**. I moved away from traditional vertical wall boundaries, opting instead for **air-hockey-style nets**.
+
+
+
+This wasn't just a visual choice; it was an exercise in altering the win/loss triggers. By changing how the ball interacts with the "goal" area, the game's spatial orientation shifts, making the familiar feel slightly more kinetic and intentional. I spent a good portion of the week balancing the color palette and layout to ensure the design felt cohesive with this new geometry.
+
+##  Under the Hood: Technical Growth
+On the technical side, I focused on making the project more modular and scalable:
+
+* **Scene Management:** I integrated the `SceneManager` API to handle transitions smoothly. It’s a much more professional way to manage the game state than my previous "all-in-one" scene approaches.
+* **The Input Manager:** I moved away from hard-coded movement logic and adopted Unity's **Input Manager**. This was a bit of a "lightbulb moment"—it allowed me to achieve the same movement with significantly less boilerplate code, making the paddles feel more responsive and the script much cleaner.
+
+
+
+## Status Report
+- [x] Rebuild core Pong physics
+- [x] Implement Air-Hockey goal logic
+- [x] Integrate `SceneManager`
+- [x] Refactor movement with `Input Manager`
+- [ ] Power-up System (Deferred to next sprint)
+
+## Reflections & Iteration
+I didn't quite get to the power-up implementation I had planned for this week, as I prioritized ensuring the **core gameplay loop** was rock-solid. However, I’m treating this as a necessary foundation. By deferring the "extra" features, I was able to focus on the interplay between functional simplicity and visual design. 
+
+> **Outcome:** I now have a robust, clean framework ready for more complex mechanical iterations in the coming weeks.
