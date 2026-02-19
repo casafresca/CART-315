@@ -171,7 +171,7 @@ Illustrator allowed experiments with transparency, borders, and glow. Subtle lum
 This cycle highlighted how mechanical balance and visual clarity together ensure power‑ups feel fair and intuitive. Integrating these elements creates an engaging and readable system.
 
 
-# Exploration Prototype 3: Reimagining the Foundation
+# Exploration Prototype 4: Reimagining the Foundation
  
 **Focus:** *Mechanical Refactoring & Aesthetic Shifts*
 
