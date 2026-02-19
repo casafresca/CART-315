@@ -204,6 +204,23 @@ On the technical side, I focused on making the project more modular and scalable
 
 ![pong game](pong_game.png)
 
+## Technical Challenge: Trigger-Based Scoring
+
+A primary hurdle this week was the implementation of the scoring system using **2D Trigger Colliders** for the air-hockey nets. Although the nets are placed correctly, the scoreboard currently fails to increment upon impact.
+
+### **Current Troubleshooting Analysis**
+
+> [!IMPORTANT]
+> In Unity, trigger events require a specific physical setup. I am currently debugging the interaction between the Ball and the Goal zones.
+
+* **Collision Detection:** I am investigating whether the issue stems from the **Layer Collision Matrix** or a missing **Rigidbody2D** component on the ball. In Unity, at least one of the interacting objects must have a Rigidbody for a trigger event to fire.
+* **Script Communication:** I am also reviewing the `OnTriggerEnter2D` method to ensure the `"Ball"` tag is being recognized correctly by the goal script.
+* **State Management:** There may be a disconnect between the trigger event and the UI update logic in the **Score Manager**.
+
+
+
+While the scoring isn't live yet, identifying these potential points of failure has given me a deeper understanding of Unity's physics engine and the importance of precise component configuration.
+
 ## Reflections & Iteration
 I didn't quite get to the power-up implementation I had planned for this week, as I prioritized ensuring the **core gameplay loop** was rock-solid. However, I’m treating this as a necessary foundation. By deferring the "extra" features, I was able to focus on the interplay between functional simplicity and visual design. 
 
