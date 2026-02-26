@@ -225,3 +225,214 @@ While the scoring isn't live yet, identifying these potential points of failure 
 I didn't quite get to the power-up implementation I had planned for this week, as I prioritized ensuring the **core gameplay loop** was rock-solid. However, I’m treating this as a necessary foundation. By deferring the "extra" features, I was able to focus on the interplay between functional simplicity and visual design. 
 
 > **Outcome:** I now have a robust, clean framework ready for more complex mechanical iterations in the coming weeks.
+
+# Design Journal: Iterative Prototype 1 (Conceptualizing)
+
+During a recent class session, students were instructed to brainstorm original video game concepts. In response, I developed four preliminary ideas, each grounded in a specific design question or personal creative interest.
+
+## Concept 1: Stealth-Based Horror Game
+
+The first concept explored the design of a horror game incorporating stealth-based combat mechanics. This idea emerged from the question:
+
+> How can a horror game maintain its sense of fear while still allowing players to defend themselves?
+
+Contemporary horror games frequently rely on player vulnerability, emphasizing evasion and helplessness as primary sources of tension. While some titles introduce combat systems, these often shift the tone from horror toward action, diminishing the sustained psychological fear central to the genre.
+
+To address this tension, I proposed a design in which combat is exclusively stealth-based. By preventing direct confrontation and requiring indirect engagement, the system preserves vulnerability and suspense while avoiding the tonal shift into action-oriented gameplay. In this model, fear is maintained through the constant threat of detection rather than overt combat dominance.
+
+---
+
+## Concept 2: Arcade-Style Soccer Game
+
+The second concept was an arcade-style soccer game. As a long-time fan of soccer simulation games, particularly those in the *FIFA* franchise, I have grown tired of the repetitive structure typical of sports simulations.
+
+This prompted the idea of reimagining soccer gameplay through an arcade lens while preserving its core simulation elements.
+
+**Proposed features:**
+- Unconventional arenas (beaches, urban streets)
+- Power-up mechanics inspired by classic arcade games
+
+This hybrid approach seeks to combine the authenticity of sports simulation with the dynamism and creativity characteristic of arcade design.
+
+---
+
+## Concept 3: Bubble Physics Platformer
+
+The third idea involved a platformer centered on the physics of bubbles. As a fan of the platforming genre, I was interested in exploring how bubble dynamics—such as buoyancy, fragility, and elasticity—could influence traversal and puzzle-solving.
+
+Such mechanics could:
+- Alter character movement  
+- Modify environmental interaction  
+- Encourage experimentation with space and momentum  
+
+---
+
+## Concept 4: Narrative-Driven Faction Game
+
+The fourth concept proposed a narrative-driven game structured around fictional factions. Players would travel between territories, learning about each faction’s history, culture, and ideological motivations, while attempting to mediate conflicts among them.
+
+This design emphasizes:
+- World-building  
+- Intercultural understanding  
+- Narrative depth as core gameplay systems  
+
+---
+
+# Collaborative Synthesis Phase
+
+Following the individual ideation phase, the professor instructed the class to exchange keywords and combine them with those of other students to generate hybrid ideas. This collaborative synthesis produced several innovative directions.
+
+---
+
+## Hybrid Concept 1: Nature vs. Urbanization Territory Game
+
+A territory-control game centered on the thematic conflict between nature and urbanization.
+
+**Premise:**
+Sentient plant life attempts to reclaim urban spaces, while internal divisions exist within both plant and human populations.
+
+**Core Objective:**
+- Not conquest, but reconciliation  
+- Traverse territories  
+- Engage with factions  
+- Foster unity  
+
+**Theme:** Cohabitation and ecological balance  
+
+---
+
+## Hybrid Concept 2: Open-World Rhythm Territory Game
+
+An open-world rhythm game structured around dance-based territorial competition.
+
+**Gameplay Structure:**
+- Encounter dance factions (waltz, merengue, breakdancing)
+- Engage in competitive dance-offs
+- Master styles and assume leadership roles
+
+This design merges:
+- Rhythm mechanics  
+- Open-world exploration  
+- Progression systems  
+
+Artistic expression becomes both competition and social mobility.
+
+---
+
+## Hybrid Concept 3: Competitive Pigeon Strategy Game
+
+A competitive strategy game centered on controlling a pigeon army.
+
+**Core Loop:**
+1. Two players bake different types of bread.
+2. Bread is fed to a neutral flock.
+3. Pigeons align with whichever bread they consume.
+4. Once resources are depleted, the pigeons split into opposing armies.
+5. Armies engage in battle.
+
+**Strategic Variation:**
+- Different bread types correspond to different unit classes.
+- Victorious players earn currency to unlock new bread types.
+
+---
+
+# Selected Concept: Columbidae Conquest
+
+Of all the ideas, the pigeon game stood out as the most compelling. I developed a conceptual sketch and breakdown of the system.
+
+---
+
+## Abstract
+
+**Columbidae Conquest** is a competitive two-player real-time strategy (RTS) game that deconstructs traditional unit-building mechanics. Instead of gold-based recruitment, it introduces a **Bread-Driven Allegiance System**, where players compete for control of a shared neutral unit pool before combat begins.
+
+---
+
+# 1. Core Gameplay Mechanics
+
+## 1.1 The Allegiance Phase (Recruitment)
+
+Unlike traditional RTS games where units spawn from a base, players must influence a neutral **Global Flock**.
+
+**Mechanics:**
+
+- Two player-controlled Chefs deploy *Bread Resources* into the central field.
+- A pigeon’s allegiance is binary and determined by the bread type consumed.
+- This creates a high-tension "tug-of-war" over troop count.
+
+### Variable Unit Classes
+
+A tiered bakery system (LV 1–3) produces bread types that modify pigeon base stats.
+
+| Bread Tier | Unit Effect | Example Role |
+|------------|------------|--------------|
+| LV 1 | Basic stats | Light Unit |
+| LV 2 | Modified stats | Ranged Unit |
+| LV 3 | High density | Heavy Unit |
+
+Bread density and nutrition map directly to unit class.
+
+---
+
+## 1.2 The Combat Phase (Resolution)
+
+Once the neutral flock is depleted, the game transitions to combat.
+
+**Key Elements:**
+- UI displays total troop count (e.g., 2 vs. 3).
+- Units engage based on bread-derived class.
+- Victory depends on tactical distribution and synergy, not just numbers.
+
+---
+
+# 2. Progression and Economy
+
+| Component   | Function                     | Visual Representation |
+|------------|-----------------------------|----------------------|
+| Bakeries   | Unit Production Hubs        | LV 1–3 structures |
+| Currency   | Resource for unlocks        | HUD Counter (e.g., 300 / 1000) |
+| Bread Types| Class Identifiers           | Sliced, Baguette, Bagel Icons |
+
+### Progression Loop
+
+1. Win battles  
+2. Earn currency  
+3. Upgrade bakeries  
+4. Unlock higher-tier bread  
+5. Increase strategic depth  
+
+This introduces a controlled **power creep** mechanic rewarding long-term planning.
+
+---
+
+# 3. UI/UX Design Analysis
+
+The interface follows a symmetrical competitive layout:
+
+- **Top Center:** Round count, win/loss record  
+- **Periphery:** Player-specific stats (troop count, currency)  
+- **Bottom Section:** Interaction zone (Chef avatars and Bakery HUD)  
+
+---
+
+# 4. Technical Implementation Considerations
+
+A functional prototype would require a finite **State Machine** for pigeon AI:
+
+1. **Idle/Wander State**  
+   - Pigeons move randomly within the center field.
+
+2. **Attracted State**  
+   - Triggered when bread is placed within a detection radius.
+
+3. **Allegiance State**  
+   - Upon consumption:
+     - `TeamID` variable updates
+     - `ClassType` variable updates
+     - Pigeon moves to the player's side of the field
+
+---
+
+# Conclusion
+
+This ideation process demonstrates how structured brainstorming and collaborative keyword synthesis can expand creative possibilities. By reframing individual concepts through collective reinterpretation, the exercise encouraged thematic depth and mechanical innovation, illustrating the value of iterative and social design processes in game development.
