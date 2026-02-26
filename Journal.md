@@ -342,6 +342,8 @@ Of all the ideas, the pigeon game stood out as the most compelling. I developed 
 
 ---
 
+![pigeon video game](pigeon_video_game.jpg)
+
 ## Abstract
 
 **Columbidae Conquest** is a competitive two-player real-time strategy (RTS) game that deconstructs traditional unit-building mechanics. Instead of gold-based recruitment, it introduces a **Bread-Driven Allegiance System**, where players compete for control of a shared neutral unit pool before combat begins.
