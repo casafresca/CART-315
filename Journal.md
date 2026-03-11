@@ -438,3 +438,76 @@ A functional prototype would require a finite **State Machine** for pigeon AI:
 # Conclusion
 
 This ideation process demonstrates how structured brainstorming and collaborative keyword synthesis can expand creative possibilities. By reframing individual concepts through collective reinterpretation, the exercise encouraged thematic depth and mechanical innovation, illustrating the value of iterative and social design processes in game development.
+
+---
+
+# Iterative Prototype 2
+
+## Project: Echoes of Conflict
+> **Note:** Project title is a placeholder and pending team consultation.
+
+## Technical Focus: Defensive Programming & Kinematic Stability in Unity
+
+---
+
+### 1. Project Concept & Scope
+The video game that my team and I would like to develop is a **narrative-driven serious game** that examines the psychological aftermath of war. Players take on the role of a veteran with PTSD, encountering the ghosts of fallen soldiers within their home environment. 
+
+**Primary Gameplay Loop:**
+* **Engagement:** Listening to the spirits' backstories.
+* **Redemption:** Making consequential decisions about their redemption.
+
+To bridge the gap between concept and prototyping, my technical objectives for this phase focused on two primary systems:
+1.  **Player Movement:** Establishing a reliable 3D navigation system for the protagonist.
+2.  **The "Recruitment" Mechanic:** Developing a functional connection between a multi-round dialogue system and an NPC "follow" state. This design ensures that the ghost transitions from a stationary entity to a persistent companion only after a successful conversation.
+
+---
+
+### 2. The Technical Challenge: Physics "Tunnelling"
+During early prototyping, a critical bug emerged in which the NPC occasionally clipped through the floor geometry during state transitions, resulting in an infinite fall.
+
+**Root Cause Analysis:**
+* **Rigidbody/NavMesh Conflict:** Interactions between Rigidbody gravity and the `NavMeshAgent` occasionally positioned the NPC inside the floor collider.
+* **Physics Priority:** If the NPC was not properly aligned with the NavMesh upon activation, the physics engine prioritized gravity over collider pushback.
+
+---
+
+### 3. Solution: Implementing Manual Constraints
+To ensure system stability, I implemented **Defensive Programming** principles through a "Triple-Lock" system.
+
+#### A. State-Based Kinematic Switching
+Within the `StartFollowing()` method, I explicitly set the Rigidbody to kinematic. Configuring the Rigidbody as kinematic prevents gravity from causing the NPC to fall through the floor.
+
+```csharp
+rb.isKinematic = true;
+rb.useGravity = false;
+```
+
+#### B. The NavMesh "Warp" Protocol
+To address potential clipping before movement begins, I utilized `NavMesh.SamplePosition`. This function checks a radius (5.0f) around the agent for the nearest valid navigation point and uses `Warp()` to snap the NPC to that location. 
+
+This approach ensures the NPC is never in an invalid spatial state when it begins following the player.
+
+#### C. Manual Y-Axis Clamping (The "Emergency Rescue")
+To address rare edge cases, I implemented a manual y-axis constraint within the `Update` loop. This serves as a **virtual floor** in code, capturing any scenario where the NPC might otherwise fall through.
+
+```csharp
+if (transform.position.y < 0.15f) 
+{ 
+    Vector3 fixedPos = transform.position; 
+    fixedPos.y = 0.16f; // Manual floor height lock 
+    transform.position = fixedPos; 
+    
+    if (rb != null) 
+    {
+        rb.linearVelocity = Vector3.zero; 
+    }
+} 
+```
+
+---
+
+### 4. Reflection and Evaluation
+Implementing manual constraints proved more effective than adjusting physics materials or collision detection modes. In serious game development, technical stability is paramount to player immersion; a ghost falling through the world breaks the narrative weight of a PTSD-focused game. 
+
+By leveraging the latest version of Unity, the script maintains high performance while addressing a classic development challenge. The outcome is a robust NPC system that reliably remains grounded while preserving the floaty, ethereal movement required for the character design.
