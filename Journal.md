@@ -449,9 +449,7 @@ This ideation process demonstrates how structured brainstorming and collaborativ
 ### Technical Focus: Defensive Programming & Kinematic Stability in Unity
 ---
 
-<video src="Unity_prototype.mp4" controls width="100%">
-
-</video>
+![Dialogue and NPC Follow Demo](Unity_prototype.gif)
 
 ### 1. Project Concept & Scope
 The video game that my team and I would like to develop is a **narrative-driven serious game** that examines the psychological aftermath of war. Players take on the role of a veteran with PTSD, encountering the ghosts of fallen soldiers within their home environment. 
