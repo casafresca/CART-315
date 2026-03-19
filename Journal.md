@@ -512,3 +512,43 @@ if (transform.position.y < 0.15f)
 Implementing manual constraints proved more effective than adjusting physics materials or collision detection modes. In serious game development, technical stability is paramount to player immersion; a ghost falling through the world breaks the narrative weight of a PTSD-focused game. 
 
 By leveraging the latest version of Unity, the script maintains high performance while addressing a classic development challenge. The outcome is a robust NPC system that reliably remains grounded while preserving the floaty, ethereal movement required for the character design.
+
+---
+
+# Project Journal: CART 315 – Game Prototyping
+**Date:** March 19, 2026  
+**Developer:** Alex C.
+
+---
+# Iterative Prototype 3
+
+## 1. Technical Implementation: The Hostile State & Transition Logic
+The primary objective this week was to implement a **Hostile State** for the NPC, moving away from a purely narrative encounter to a "Combat-First" interaction loop. I developed a state-machine logic within the `NPC.cs` script to handle this transition.
+
+The NPC now initiates in a **Hostile Phase**:
+* **Dynamic Tracking:** Using `Quaternion.LookRotation` and `Slerp`, the NPC now actively tracks the player's position during combat, ensuring the forward-facing Z-axis of the weapon is always aligned with the player.
+* **The "Threshold" Trigger:** I implemented a health-monitoring system where the NPC only becomes "Interactable" once a damage threshold is met (current health $\leq$ 30%). 
+* **State Transition:** Upon reaching this threshold, the `StopCombat()` method is triggered, which disables the NPC's weapon, halts its firing routine, and re-enables the `Interactable` base logic.
+
+---
+
+## 2. Overcoming Technical Friction: Projectile Physics & Self-Collision
+A significant challenge during the development of the combat mode involved **Self-Collision Logic**. When spawning projectiles at the tip of the weapon barrel, bullets would immediately collide with the shooter (whether Player or NPC), resulting in an instant `Destroy()` call before the bullet could travel.
+
+I resolved this by implementing a dual-layer safety system:
+
+1.  **`Physics.IgnoreCollision`**: I added a runtime command to the `FireWeapon` and `NPCShoot` routines. This tells Unity’s physics engine to explicitly ignore the specific collision between the newly instantiated bullet and the shooter's own `Collider`.
+2.  **Shooter Identification**: I updated the `Bullet.cs` script to include a `shooter` reference. By assigning the shooter's `GameObject` at the moment of instantiation, the bullet's `OnCollisionEnter` logic can effectively differentiate between a "Friendly" hit (the person who fired it) and a "Valid" hit (the opponent or the environment).
+
+---
+
+## 3. Reflective Analysis: Mechanical Tonal Shifts
+By requiring the player to "subdue" the ghost through combat before initiating dialogue, the gameplay loop reinforces the narrative theme that these spirits are trapped in a defensive, trauma-induced cycle. 
+
+The transition from a high-intensity, chaotic gunfight to a sudden, quiet UI-focused dialogue window produces a significant tonal shift. This mechanical "forced pause" emphasizes the contrast between the violence of the combat phase and the possibility of reconciliation during the dialogue phase.
+
+---
+
+> ### Next Steps:
+> * **Player Health System:** Implement a player-side health script to provide genuine stakes during the NPC's hostile phase.
+> * **Visual Feedback:** Integrate a **Ghost Shader** or particle system to visually signal when the NPC has transitioned from "Hostile" to "Vulnerable" (e.g., changing from a red aggressive glow to a neutral white).
