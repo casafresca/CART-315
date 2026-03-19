@@ -515,11 +515,6 @@ By leveraging the latest version of Unity, the script maintains high performance
 
 ---
 
-# Project Journal: CART 315 – Game Prototyping
-**Date:** March 19, 2026  
-**Developer:** Alex C.
-
----
 # Iterative Prototype 3
 
 ## 1. Technical Implementation: The Hostile State & Transition Logic
