@@ -542,6 +542,8 @@ By requiring the player to "subdue" the ghost through combat before initiating d
 
 The transition from a high-intensity, chaotic gunfight to a sudden, quiet UI-focused dialogue window produces a significant tonal shift. This mechanical "forced pause" emphasizes the contrast between the violence of the combat phase and the possibility of reconciliation during the dialogue phase.
 
+![added_guns](added_guns.png)
+
 ---
 
 > ### Next Steps:
