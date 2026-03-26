@@ -552,6 +552,7 @@ The transition from a high-intensity, chaotic gunfight to a sudden, quiet UI-foc
 >
 > ---
 >
+> 
 > # Journal Entry: Iterative Prototype 4
 **Project Context:** 3D First-Person Veteran/PTSD Narrative  
 **Technical Focus:** Reactive NPC Agent States & Interaction Systems
