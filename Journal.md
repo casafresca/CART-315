@@ -549,3 +549,44 @@ The transition from a high-intensity, chaotic gunfight to a sudden, quiet UI-foc
 > ### Next Steps:
 > * **Player Health System:** Implement a player-side health script to provide genuine stakes during the NPC's hostile phase.
 > * **Visual Feedback:** Integrate a **Ghost Shader** or particle system to visually signal when the NPC has transitioned from "Hostile" to "Vulnerable" (e.g., changing from a red aggressive glow to a neutral white).
+>
+> ---
+>
+> # Journal Entry: Iterative Prototype 4
+**Project Context:** 3D First-Person Veteran/PTSD Narrative  
+**Technical Focus:** Reactive NPC Agent States & Interaction Systems
+
+---
+
+## Executive Summary
+The primary objective of this sprint was to transition the NPC from a stationary dialogue trigger into a **reactive agent** with three distinct behaviors: **Hostile Combat**, **Staggered/Vulnerable**, and **Passive Following**. This required a shift from physics-heavy movement to more stable, script-controlled transforms.
+
+---
+
+## Phase I: Combat Mechanics & Aiming Precision
+* **The Problem:** Initial testing showed the NPC’s aiming was imprecise, often firing into world geometry rather than at the player.
+* **The Iteration:** * **Shoulder Pivot Implementation:** Added a pivot point to prevent weapon clipping. Initial attempts rotated from the mesh center (acting like a turret); this was corrected by offsetting the pivot specifically to the mesh's shoulder.
+    * **Rotation Clamping:** Integrated `Mathf.Clamp` to limit rotation. This prevented immersion-breaking "broken neck" aiming and forced the NPC to perform full-body turns when the player moved past its line of sight.
+
+## Phase II: Dynamic Combat Movement
+* **The Problem:** Stationary NPCs lacked the necessary tension and were too easily defeated by the player.
+* **The Iteration:** * **Strafing Logic:** Implemented a "nudge" system that moves the NPC randomly on the X and Z axes. This creates a realistic strafing effect without conflicting with the `NavMeshAgent`.
+    * **Physics Stability:** Set the Rigidbody to `isKinematic` to bypass faulty gravity calculations and prevent the NPC from slipping through the floor geometry during movement.
+
+## Phase III: The Staggered State & Dialogue Transition
+* **The Requirement:** A narrative-driven mechanical shift where the NPC becomes vulnerable once a health threshold is met.
+* **The Iteration:** * **Threshold Trigger:** At **30% health**, the `StopCombat()` function is called.
+    * **State Change:** All movement and combat scripts are halted, rendering the NPC a "sitting duck" and successfully triggering the transition to player-initiated dialogue.
+
+## Phase IV: Navigation & Following Stability
+* **The Problem:** A "vanishing" bug occurred where the NPC would disappear from the scene the moment the `NavMeshAgent` was enabled after the dialogue phase.
+* **The Iteration:** * **Warping Fix:** Used `NavMesh.SamplePosition` combined with `agent.Warp()` to snap the NPC directly onto the valid NavMesh before activation.
+    * **Collision Management:** Implemented `IgnoreCollision` between the Player and NPC to prevent physics-based overlapping/instability during the "Follow" state.
+
+---
+
+## Reflection & Future Roadmap
+The transition from physics-based movement to script-controlled transforms has significantly increased the stability of the prototype. The NPC now successfully flows through a complete behavioral loop:
+
+$$\text{Attack} \rightarrow \text{Surrender} \rightarrow \text{Cooperate}$$
+
