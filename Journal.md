@@ -546,17 +546,16 @@ The transition from a high-intensity, chaotic gunfight to a sudden, quiet UI-foc
 
 ---
 
-> ### Next Steps:
+>### Next Steps:
 > * **Player Health System:** Implement a player-side health script to provide genuine stakes during the NPC's hostile phase.
 > * **Visual Feedback:** Integrate a **Ghost Shader** or particle system to visually signal when the NPC has transitioned from "Hostile" to "Vulnerable" (e.g., changing from a red aggressive glow to a neutral white).
->
-> ---
->
-> 
-> # Journal Entry: Iterative Prototype 4
+
+---
+<br>
+
+# Journal Entry: Iterative Prototype 4
 **Project Context:** 3D First-Person Veteran/PTSD Narrative  
 **Technical Focus:** Reactive NPC Agent States & Interaction Systems
-
 ---
 
 ## Executive Summary
