@@ -590,3 +590,47 @@ The transition from physics-based movement to script-controlled transforms has s
 
 $$\text{Attack} \rightarrow \text{Surrender} \rightarrow \text{Cooperate}$$
 
+
+# Iterative Prototype 5
+
+
+## Dev Log: Procedural Death & Respawn System
+
+## 1. Abstract
+This entry documents the implementation of a bi-modal visual feedback system in Unity (C#). Instead of using a traditional health bar, the system utilizes procedural UI overlays to communicate player damage and death. It also features an asynchronous respawn mechanism to handle player "teleportation" and physics resets seamlessly.
+
+---
+
+## 2. Design Concept: Sensory Proxying
+To maintain immersion, I replaced numerical HUD elements with a **Chromatic Alpha Shift** system. This uses screen overlays to signal state changes:
+
+* **Red Vignette:** Triggers on a "hit," acting as a visual proxy for damage taken to the `currentHealth` variable.
+* **White Fade:** A full-screen opacity shift that "blanks" the player's view. This allows the script to move the player's coordinates ($x, y, z$) behind the scenes without breaking immersion.
+
+---
+
+## 3. Technical Implementation
+
+### 3.1 Damage Logic
+The system uses a `Trigger2D` collision matrix to detect `EnemyBullet` entities. When a collision occurs, the health script runs a simple subtraction algorithm:
+
+$$H_{final} = \max(0, H_{initial} - D)$$
+
+If $H_{final}$ reaches 0, the script invokes the `DeathSequenceRoutine` coroutine.
+
+### 3.2 Procedural Alpha Manipulation
+To keep the build lightweight, I avoided using static sprites. Instead, I manipulated the `CanvasRenderer` color properties directly using **Linear Interpolation (Lerp)**:
+
+$$A_{t} = (1 - t) \cdot A_{start} + t \cdot A_{end}$$
+
+```csharp
+// Example of the fade logic
+IEnumerator FadeOut() {
+    float t = 0;
+    while (t < 1) {
+        t += Time.deltaTime * fadeSpeed;
+        overlay.color = Color.Lerp(Color.clear, Color.white, t);
+        yield return null;
+    }
+}
+
