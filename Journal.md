@@ -633,4 +633,52 @@ IEnumerator FadeOut() {
         yield return null;
     }
 }
+```
+
+# Final Iterative Prototype
+
+# Project Summary: My CART 315 Journal Synthesis
+
+Over the course of the semester, my development process progressed from foundational mechanics to a more nuanced exploration of narrative-driven gameplay. My journal entries document a technical journey focused on representing the internal struggle of a veteran with PTSD, evolving from basic interaction prototypes to a cohesive 3D environment.
+
+### Key Themes in Progression
+
+* **Mechanical Iteration:** I began with experimental concepts, including an aquatic memory game and Pong-style power-up balancing, which developed the logic skills necessary for this final prototype.
+* **Narrative Integration:** I integrated narrative elements into the gameplay by transitioning from abstract geometry (greyboxing) to thematic assets. This involved selecting a stylized low-poly aesthetic to convey the emotional tone of PTSD.
+* **Technical Problem Solving:** My logs detail navigating the Unity environment, specifically resolving **Universal Render Pipeline (URP)** shader incompatibilities and mastering parent-child hierarchies for mesh scaling.
+* **State Management:** Implementing the `WeaponToggle` script marked a transition from static scenes to dynamic player agency.
+
+---
+
+## Abstract
+In this entry, I document the technical progression of my first-person prototype, which centers on a veteran navigating the psychological impacts of PTSD. The current development phase focused on transitioning from abstract greybox geometry to thematic 3D assets, aligning the project's render pipeline, and scripting player-controlled state changes.
+
+## 1. Introduction and Thematic Context
+Visual representation is critical when designing atmospheric prototypes. For this project, I replaced the placeholder "dummy" rectangular prism with a period-accurate, low-poly WWII weapon. I deliberately selected a **stylized, low-poly aesthetic** to maintain performance and ensure the visuals supported the narrative rather than serving as mere decoration.
+
+## 2. Technical Methodology: Asset Integration
+The transition from greybox to a 3D mesh involved several specific technical milestones within Unity:
+
+- [x] **Render Pipeline Resolution:** Resolved shader errors (magenta textures) by identifying URP incompatibility and unpacking the developer-provided URP-specific material package.
+- [x] **Hierarchy Management:** To maintain logical consistency, I set the new model as a child of the dummy object. I disabled the dummy's `Mesh Renderer` to make it invisible while maintaining the transform logic.
+- [x] **Scaling Correction:** Fixed distortion issues caused by inherited scaling by resetting the parent scale to `(1, 1, 1)` before adjusting the child asset’s specific dimensions.
+
+## 3. Interaction Implementation: State Toggling
+To support the narrative flow, the player begins the simulation unarmed. A `WeaponToggle` C# script was written for the Player object to handle the holster mechanic.
+
+### Scripting Logic:
+* **Initialization:** Used the `Start()` method to set the weapon to inactive by default.
+* **Input Mapping:** Implemented a listener in the `Update()` loop to map the **'Q'** key to toggle the weapon’s active state.
+
+```csharp
+// Example logic used for the holster mechanic
+void Update() {
+    if (Input.GetKeyDown(KeyCode.Q)) {
+        weaponIsActive = !weaponIsActive;
+        weaponObject.SetActive(weaponIsActive);
+    }
+}
+```
+
+
 
