@@ -679,6 +679,38 @@ void Update() {
     }
 }
 ```
+# Design Journal: Final Reflection
 
+## 1. Early Foundations: Constraint & Physics
+At the start of the semester, I concentrated on the fundamental elements of interaction, addressing hardware limitations and refining basic physics loops. These foundational exercises established an iterative design process that developed over the term.
+
+**Gameboy Development (Aseprite and GB Studio):** I worked within the strict 8-bit hardware constraints of the Gameboy, using Aseprite, a pixel art tool, to create tile-based assets. This project demonstrated the principles of minimalist design and how to convey a game world when every pixel and byte of memory is limited.
+
+**Arcade Iterations (Pong and Flappy Bird):** I recreated and updated these classic game types. For *Pong*, I focused on enhancing "juice"—which refers to additional animations and effects that make interactions more engaging—as well as refining the paddle's response physics. In *Flappy Bird*, I adjusted gravity and collision detection systems to ensure responsive gameplay.
+
+---
+
+## 2. Prototype Thinking: "Columbidae Conquest"
+This foundational work prepared me for the "Prototype Thinking" phase midway through the term, during which I transitioned from established genres to original, experimental mechanics. 
+
+I conceptualized the **"Bread-Driven Allegiance"** system for a strategy game centered on pigeons. This project marked my initial significant experiment with **AI State Machines**; I designed how NPCs would transition between states such as `Scout`, `Feed`, and `Follow` in response to player-initiated "bread" triggers. This phase was critical because I learned to translate abstract and unconventional ideas into functional C# logic, progressing from animating movement to developing responsive AI behavior.
+
+---
+
+## 3. Final Capstone: *Echoes of Conflict*
+Building on these experimental mechanics, the final prototype incorporated the AI and UI lessons from the "Pigeon" phase into a serious, high-stakes narrative.
+
+As the **Lead Programmer**, I was responsible for designing the technical architecture of the interaction. I applied the logic flow skills developed during the Gameboy project to a complex 3D Unity environment:
+
+* **Rapport and Word-Bank System:** I developed the dialogue mechanic in the final build, allowing players to select words such as "breathe" or "son" to influence the Soldier’s state. This system directly evolved from the trigger-based AI logic initiated during the Pigeon prototype.
+* **Narrative Data Persistence:** I programmed the Journal and Memory system, enabling the game to retain facts across the five-day cycle. This feature allowed for assessment of the player’s empathy and attention through the final quiz mechanic.
+* **System Stability:** I managed spatial programming tasks, including resolving `NavMeshAgent` bugs and ensuring a seamless transition into the "Therapy Room" for both the player and the non-player character.
+
+---
+
+## Final Reflection
+Reflecting on the progression from GB Studio to Unity, my most significant insight has been the development of my **"Modular Logic"** approach. Whether working with 8-bit sprites or 3D shaders, I consistently upheld a high standard for original, unaltered logic in accordance with my coding philosophy. 
+
+I advanced from refining the physics of a paddle in *Pong* to shaping the emotional responses of non-player characters in *Echoes of Conflict*. This course has enhanced my ability to lead the technical aspects of group projects while prioritizing human interaction within the code.
 
 
