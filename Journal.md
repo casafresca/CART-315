@@ -697,7 +697,7 @@ I conceptualized the **"Bread-Driven Allegiance"** system for a strategy game ce
 
 ---
 
-## 3. Final Capstone: *Echoes of Conflict*
+## 3. Final Capstone: *(PTSD Narrative Game)*
 Building on these experimental mechanics, the final prototype incorporated the AI and UI lessons from the "Pigeon" phase into a serious, high-stakes narrative.
 
 As the **Lead Programmer**, I was responsible for designing the technical architecture of the interaction. I applied the logic flow skills developed during the Gameboy project to a complex 3D Unity environment:
